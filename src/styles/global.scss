@@ -55,3 +55,9 @@ h2 {
 button {
   cursor: pointer;
 }
+
+@media (max-width: 1366px) {
+  html {
+    font-size: 80%;
+  }
+}
