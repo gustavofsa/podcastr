@@ -62,7 +62,7 @@
   footer {
     align-self: stretch;
 
-    &.empty {
+    &.empty .progress {
       opacity: 0.5;
     }
   }
@@ -108,10 +108,33 @@
 
     &:disabled {
       cursor: default;
+      opacity: 0.5;
     }
 
     &:hover:not(:disabled) {
       filter: brightness(0.7);
+    }
+
+    &.isActive {
+      filter: invert(0.35) sepia(1) saturate(3) hue-rotate(100deg);
+      position: relative;
+
+      &::after {
+        content: "";
+        width: 4px;
+        height: 4px;
+        border-radius: 2px;
+        background: greenyellow;
+        position: absolute;
+        left: 50%;
+        bottom: -7px;
+        transform: translate(-50%, -50%);
+      }
+    }
+
+    &.isActive:hover {
+      filter: brightness(0.6) invert(0.35) sepia(1) saturate(3)
+        hue-rotate(100deg);
     }
 
     &.playButton {
